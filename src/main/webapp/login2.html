@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <link rel="stylesheet" type="text/css" href="users.css">
+<meta charset="ISO-8859-1">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <meta name="description" content="">
+ <meta name="author" content="">
+ <title>Usuarios</title>
+ <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+ <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+ <link href="css/sb-admin-2.min.css" rel="stylesheet">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <script src="Login2.js"></script>
+</head>
+<body id="page-top">
+        <div id="wrapper">
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="menu.html">
+            <div class="sidebar-brand-icon rotate-n-0">
+
+                <img src="https://png.pngtree.com/png-vector/20191010/ourlarge/pngtree-rose-logo-vector-png-image_1811819.jpg" width="50px">
+            </div>
+            <div class="sidebar-brand-text mx-3">ROSA CONDENSA COSMETICS</div>
+            </a>
+            <hr class="sidebar-divider my-0">
+            <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:8080/login2.html">
+                <i class="fas fa-home"></i>
+                <span>Usuarios</span></a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:8080/cliente.html">
+                <i class="fas fa-users"></i>
+                <i class="fa-solid fa-cart-flatbed-boxes"></i>
+                <span>Clientes</span></a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:8080/proveedor.html">
+                <i class="fas fa-truck"></i>
+                <span>Proveedores</span></a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="/ciclo 3/Productos.html 3/">
+                
+                <i class="fas fa-boxes stacked"></i>
+                <span>Productos</span></a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="/ciclo 3/Ventas.html">
+                <i class="fas fa-table"></i>
+                <span>Ventas</span></a>
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="/ciclo 3/Reportes.html">
+                <i class="fas fa-book"></i>
+                <span>Reportes</span></a>
+            </li>
+    
+        </ul>
+        <div id="content-wrapper" class="d-flex flex-column">
+            <div id="content">
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                <i class="fa fa-bars"></i>
+                </button>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown no-arrow d-sm-none">
+                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-search fa-fw"></i>
+                    </a>
+                    <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-bell fa-fw"></i>
+                    <span class="badge badge-danger badge-counter">3+</span>
+                    </a>
+                
+                    </h6>
+                
+                    </a>
+                    </div>
+                </li>
+                </ul>
+            </nav>
+            <div class="container-fluid">
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                <h1 class="h3 mb-0 text-gray-800">Usuarios</h1>
+                </div>
+                <div>
+                <form id="contenedorUsuario">
+                    <form name="news">
+                    <b><label>Cedula:</label></b><br>
+                    <input id="id" type="text"class="inputCampo"><br><br>
+                    <b><label>Nombre Completo:</label></b><br>
+                    <input id="usuario" type="text"class="inputCampo"><br><br>
+                    <b><label>Correo Electrónico:</label></b><br>
+                    <input id="clave" type="email"class="inputCampo"><br><br>
+                    <b><label>Usuario:</label></b><br>
+                    <input id="nombre" type="text"class="inputCampo"><br><br>
+                    <b><label>Contraseña:</label></b><br>
+                    <input id="correo" type="password"class="inputCampo"><br><br>
+                    
+                
+                <div>
+                <input type="reset" value="Limpiar" target="_parent"  class="boton">
+                <input type="button" value="Buscar"   id="buscarU" target="_parent" class="boton">
+                <input type="button" value="Agregar"  id="agregarU" target="_parent" class="boton">
+                <input type="button" value="Eliminar" id="eliminarU" target="_parent"  class="boton">
+                <input type="button" value="Actualizar"  id="actualizarU" target="_parent"  class="boton">
+                <input type="button" value="Listar"   id="listarU" target="_parent"  class="boton"></div>
+                </form>
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                    <div class="modal-header">
+            
+                        
+                    </div>    
+                    </div>
+                    </div>
+                </div>
+                </div>
+                <script src="vendor/jquery/jquery.min.js"></script>
+                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+                <script src="js/sb-admin-2.min.js"></script>
+                <script src="vendor/chart.js/Chart.min.js"></script>
+                <script src="js/demo/chart-area-demo.js"></script>
+                <script src="js/demo/chart-pie-demo.js"></script>
+                <div id="mensaje">
+   				 </div>
+            </body>
+    </html>

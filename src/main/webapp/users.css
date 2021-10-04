@@ -1,0 +1,84 @@
+body{
+	background: white;
+	padding-top: 10px;
+}
+.letra{
+	font-size: 25px;
+}
+.campo{
+	border: solid 3px #3498DB;
+	font-family: 'Lucida Sans', sans-serif;
+	font-size: 18px;
+	padding: 10px;
+	margin-bottom: 30px;
+	width: 320px;
+}
+.textArea{
+	border: solid 3px #3498DB;
+	font-family: 'Lucida Sans', sans-serif;
+	font-size: 18px;
+	padding: 10px;
+	width: 750px;
+	border-radius: 5px;
+}
+.textArea:hover{
+	border: solid 3px #E74C3C;
+}
+.select{
+	border: solid 3px #3498DB;
+	font-family: 'Lucida Sans', sans-serif;
+	font-size: 18px;
+	padding: 10px;
+	width: 750px;
+	border-radius: 5px;
+}
+.select:hover{
+	border: solid 3px #E74C3C;
+}
+.inputHora{
+	border: solid 3px #3498DB;
+	font-family: 'Lucida Sans', sans-serif;
+	font-size: 18px;
+	padding: 10px;
+	width: 750px;
+	border-radius: 5px;
+}
+.inputHora:hover{
+	border: solid 3px #E74C3C;
+}
+.inputFecha{
+	border: solid 3px #3498DB;
+	font-family: 'Lucida Sans', sans-serif;
+	font-size: 18px;
+	padding: 10px;
+	width: 750px;
+	border-radius: 5px;
+}
+.inputFecha:hover{
+	border: solid 3px #E74C3C;
+}
+.inputCampo{
+	border: solid 3px #3498DB;
+	font-family: 'Lucida Sans', sans-serif;
+	font-size: 18px;
+	padding: 10px;
+	width: 750px;
+	border-radius: 5px;
+}
+.inputCampo:hover{
+	border: solid 3px #E74C3C;
+}
+.boton{
+	background: #2E86C1;
+	border: solid 0;
+	font-family: 'Lucida Sans', sans-serif;
+	font-size: 18px;
+	color: white;
+	padding: 10px;
+	width: 150px;
+	border-radius: 5px;
+}
+.boton:hover{
+	color: whitesmoke;
+	background: #1B4F72;
+}

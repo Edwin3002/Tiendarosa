@@ -1,0 +1,54 @@
+@charset "ISO-8859-1";
+@charset "ISO-8859-1";
+body{
+    background: white;
+    padding-top: 60px;
+}
+#contenedor{
+    -webkit-border-radius: 10px;
+    -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    -moz-border-radius: 10px;
+    -moz-box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    -o-border-radius: 10px;
+    -o-box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    font-family: 'Lucida Sans', sans-serif;
+    font-size: 20px;
+    margin: 0 auto;
+    padding: 30px;
+    width: 350px;
+}
+.letra{
+    font-size: 25px;
+}
+.campo{
+    border: solid 3px #3498DB;
+    font-family: 'Lucida Sans', sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 30px;
+    width: 320px;
+}
+.boton{
+    background: #3498DB;
+    border: solid 0;
+    font-family: 'Lucida Sans', sans-serif;
+    font-size: 18px;
+    color: black;
+    padding: 10px;
+    width: 150px;
+}
+.boton:hover{
+    color: whitesmoke;
+    background: #1B4F72;
+}
+.check{
+    border: solid 3px #3498DB;
+    font-family: 'Lucida Sans', sans-serif;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 30px;
+    width: 320px;
+}
