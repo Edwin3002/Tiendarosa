@@ -4,7 +4,7 @@ $(document).ready(function(){
         $.get("http://localhost:8080/listausuarios",function(data, status){
             if(status=="success"){
                 let longitud = data.length;
-                let salida ="<table border='1'>";
+                let salida ="<br><table border='1' class='table table-striped'>";
                 salida = salida + "<tr><th>CEDU</th><th>NOMBRE</th><th>CORREO</th><th>USUARIO</th><th>CLAVE</th></tr>";
                 for(let i=0;i<longitud;i++){
                     salida = salida + "<tr>";
@@ -35,7 +35,7 @@ $(document).ready(function(){
 				$("#usuario").val(data[0].usuario);
                 $("#clave").val(data[0].clave);                    
             }else{
-                $("#mensaje").html("<b style='color:red;'>USUARIO NO ENCONTRADO !!!</b>");
+                $("#mensaje").html("<br><div class='alert alert-danger' role='alert'>El cliente No encontrado </div>");
             }                  
         });
     });
@@ -50,9 +50,9 @@ $(document).ready(function(){
         let laclave = $("#clave").val();
         $.post("http://localhost:8080/crearusuario",{id_usuario: elid, nombre: elnombre, correo: elcorreo, usuario: elusuario, clave: laclave},function(data, status){
             if(data==true){
-                $("#mensaje").html(" El usuario fue creado .");
+                $("#mensaje").html("<br><div class='alert alert-primary' role='alert'>El usuario fue creado </div>");
             }else{
-                $("#mensaje").html("<b style='color:red;'>No se puedo crear, ya existe!!!</b>");
+                $("#mensaje").html("<br><div class='alert alert-danger' role='alert'>No se puede crear, ya existe</div>");
             }
         });
     });
@@ -67,9 +67,9 @@ $(document).ready(function(){
         let laclave = $("#clave").val();
         $.post("http://localhost:8080/actualizarusuario",{id_usuario: elid, nombre: elnombre, correo: elcorreo, usuario: elusuario, clave: laclave},function(data, status){
             if(data==true){
-                $("#mensaje").html(" El usuario fue actualizado .");
+                $("#mensaje").html("<br><div class='alert alert-primary' role='alert'>El usuario fue actualizado </div>");
             }else{
-                $("#mensaje").html("<b style='color:red;'>No se pudo actualizar, NO existe!!!</b>");
+                $("#mensaje").html("<br><div class='alert alert-danger' role='alert'>No se pudo actualizar, no existe </div>");
             }
         });
     });
@@ -83,9 +83,9 @@ $(document).ready(function(){
         let elid = $("#id").val();
         $.post("http://localhost:8080/borrarusuario",{id_usuario: elid},function(data, status){
             if(data==true){
-                $("#mensaje").html(" El usuario fue eliminado .");
+                $("#mensaje").html("<br><div class='alert alert-primary' role='alert'>El usuario fue eliminado </div>");
             }else{
-                $("#mensaje").html("<b style='color:red;'>No se pudo eliminar, NO existe!!!</b>");
+                $("#mensaje").html("<br><div class='alert alert-danger' role='alert'>No se pudo borrar, no existe </div>");
             }
         });
     });

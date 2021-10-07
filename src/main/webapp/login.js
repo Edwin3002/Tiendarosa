@@ -8,11 +8,9 @@ $(document).ready(function(){
                      $.post("http://localhost:8080/loginusuario2",{ usuario: elUsuario, clave: laClave },
                     function(data, status){
 	
-					if (elUsuario !=null & laClave !=null){
-						alert("Faltan datos por llenar");
-						window.location.href = "Login.jsp";
+					
 		
-						/*if (data.existe=true){
+						if (data.existe==true){
 						alert("Bienvenido a la tienda " + elUsuario);
 						window.location.href = "login2.html";
 						
@@ -20,19 +18,22 @@ $(document).ready(function(){
 						}
 						else{
 						alert("No existe este usuario");
-						window.location.href = "Login.jsp";*/
+						window.location.href = "Login.jsp";
 						
+						/*if (elUsuario !=null & laClave !=null){
+						alert("Faltan datos por llenar");
+						window.location.href = "Login.jsp";
 						}
 						else {
 						alert("Bienvenido a la tienda " + elUsuario);
-						window.location.href = "login2.html"
+						window.location.href = "login2.html"*/
 						
 						
 						
 					}
 					});
 				});
-				function mostraruno(item, index){
+				function mostrarUno(item, index){
 					let valores = Object.values(item);
 					$("#usuario").val(valores[0]);
 					$("#clave").val(valores[1]);

@@ -4,7 +4,7 @@ $(document).ready(function(){
         $.get("http://localhost:8080/listaproveedores",function(data, status){
             if(status=="success"){
                 let longitud = data.length;
-                let salida ="<table border='1'>";
+                let salida ="<br><table border='1' class='table table-striped'>";
                 salida = salida + "<tr><th>NIT</th><th>NOMBRE</th><th>CIUDAD</th><th>DIRECCION</th><th>TELEFONO</th></tr>";
                 for(let i=0;i<longitud;i++){
                     salida = salida + "<tr>";
@@ -34,7 +34,7 @@ $(document).ready(function(){
                 $("#telefono").val(data[0].telefono);
 				                   
             }else{
-                $("#mensaje").html("<b style='color:red;'>proveedor NO ENCONTRADO !!!</b>");
+                $("#mensaje").html("<br><div class='alert alert-danger' role='alert'>El cliente No encontrado </div>");
             }                  
         });
     });
@@ -50,9 +50,9 @@ $(document).ready(function(){
 		
         $.post("http://localhost:8080/crearproveedor",{id_usuario: elid, nombre: elnombre, ciudad: laciudad, direccion: ladireccion, telefono: eltelefono,},function(data, status){
             if(data==true){
-                $("#mensaje").html(" El proveedor fue creado .");
+                $("#mensaje").html("<br><div class='alert alert-primary' role='alert'>El proveedor fue creado </div>");
             }else{
-                $("#mensaje").html("<b style='color:red;'>No se puedo crear, ya existe!!!</b>");
+                $("#mensaje").html("<br><div class='alert alert-danger' role='alert'>No se puede crear, ya existe</div>");
             }
         });
     });
@@ -67,9 +67,9 @@ $(document).ready(function(){
 
         $.post("http://localhost:8080/actualizarproveedor",{id_usuario: elid, nombre: elnombre, ciudad: laciudad, direccion: ladireccion, telefono: eltelefono,},function(data, status){
             if(data==true){
-                $("#mensaje").html(" El proveedor fue actualizado .");
+               $("#mensaje").html("<br><div class='alert alert-primary' role='alert'>El proveedor fue actualizado </div>");
             }else{
-                $("#mensaje").html("<b style='color:red;'>No se pudo actualizar, NO existe!!!</b>");
+                $("#mensaje").html("<br><div class='alert alert-danger' role='alert'>No se pudo actualizar, no existe </div>");
             }
         });
     });
@@ -78,9 +78,9 @@ $(document).ready(function(){
         let elid = $("#id").val();
         $.post("http://localhost:8080/borrarproveedor",{id_usuario: elid},function(data, status){
             if(data==true){
-                $("#mensaje").html(" El proveedor fue eliminado .");
+                $("#mensaje").html("<br><div class='alert alert-primary' role='alert'>El proveedor fue eliminado </div>");
             }else{
-                $("#mensaje").html("<b style='color:red;'>No se pudo eliminar, NO existe!!!</b>");
+                $("#mensaje").html("<br><div class='alert alert-danger' role='alert'>No se pudo borrar, no existe </div>");
             }
         });
     });
