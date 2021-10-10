@@ -43,17 +43,17 @@ public class ProductoController {
 	@RequestMapping("/crearproducto")
 	public boolean crearProducto(String id_usuario, String nombre, String nitprove, int precio, int iva, int venta){
 		ProductoDAO dao = new ProductoDAO();
-		ProductoVO Producto = new ProductoVO();
+		ProductoVO producto = new ProductoVO();
 	
-		Producto.setId_usuario(Long.parseLong(id_usuario));
-		Producto.setNombre(nombre);
-		Producto.setNitprove(nitprove);
-		Producto.setPrecio(precio);
-		Producto.setIva(iva);
-		Producto.setVenta(venta);
+		producto.setId_usuario(Long.parseLong(id_usuario));
+		producto.setNombre(nombre);
+		producto.setNitprove(nitprove);
+		producto.setPrecio(precio);
+		producto.setIva(iva);
+		producto.setVenta(venta);
 		
 		
-		return dao.crearProducto(Producto);
+		return dao.crearProducto(producto);
 	}
 	
 	
@@ -77,16 +77,16 @@ public class ProductoController {
 	@RequestMapping("/actualizarproducto")
 	public boolean actualizarProducto(String id_usuario, String nombre, String nitprove, int precio, int iva, int venta) {
 		ProductoDAO dao = new ProductoDAO();
-		ProductoVO Producto = new ProductoVO();
+		ProductoVO producto = new ProductoVO();
 			
-		Producto.setId_usuario(Long.parseLong(id_usuario));
-		Producto.setNombre(nombre);
-		Producto.setNitprove(nitprove);
-		Producto.setPrecio(precio);
-		Producto.setIva(iva);
-		Producto.setVenta(venta);
+		producto.setId_usuario(Long.parseLong(id_usuario));
+		producto.setNombre(nombre);
+		producto.setNitprove(nitprove);
+		producto.setPrecio(precio);
+		producto.setIva(iva);
+		producto.setVenta(venta);
 			
-		return dao.actualizarProducto(Producto);
+		return dao.actualizarProducto(producto);
 	}
 	
 }

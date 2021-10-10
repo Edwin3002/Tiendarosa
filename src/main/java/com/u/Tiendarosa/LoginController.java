@@ -9,7 +9,6 @@ import org.springframework.boot.json.JsonParser;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.DAO.Tiendarosa.*;
-import com.DTO.Tiendarosa.UsuarioVO;
 import com.DTO.Tiendarosa.LoginVO;
 import com.fasterxml.jackson.databind.JsonNode;
 @RestController

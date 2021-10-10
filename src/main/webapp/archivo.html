@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>CRUD</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+function listar(){
+$.get("http://localhost:8080/listaClientes",function(data, status){
+if(status=="success"){
+let longitud = data.length;
+let salida ="<table border='1'>";
+salida = salida +
+"<tr><th>ID</th><th>NOMBRE</th><th>NITPROVE</th><th>PRECIO</th><th>IVA</th><th>VENTA</th></tr>";
+for(let i=0;i<longitud;i++){
+
+
+salida = salida + "<tr>";
+salida = salida + "<td>"+data[i].id_usuario+"</td>";
+
+salida = salida + "<td>"+data[i].nombre+"</td>";
+salida = salida + "<td>"+data[i].nitprove+"</td>";
+salida = salida + "<td>"+data[i].precio+"</td>";
+salida = salida + "<td>"+data[i].iva+"</td>";
+salida = salida + "<td>"+data[i].venta+"</td>";
+salida = salida + "</tr>";
+}
+salida = salida +"</table>";
+$("#salida").html(salida);
+}
+});
+}
+});
+</script>
+</head>
+<body>
+<label>Cedula: </label><input type="text" id="cedula"><button
+id="btnBuscarCedula">Buscar</button><br>
+<p id="mensaje"></p>
+<label>Direccion: </label><input type="text" id="direccion"><br>
+<label>Email: </label><input type="text" id="email"><br>
+<label>Nombre: </label><input type="text" id="nombre"><br>
+<label>Telefono: </label><input type="text" id="telefono"><br>
+<button id="btnCrear">Crear Cliente</button>
+<button id="btnActualizar">Actualizar Datos</button>
+<button id="btnBorrar">Borrar Cliente</button>
+<button id="btnLimpiar">Limpiar</button>
+<hr>
+<form method="POST" action="./cargarArchivo" enctype="multipart/form-data">			<!-- Quitar punto -->
+ <label>Seleccione el archivo .csv </label><input type="file" name="archivoCSV"
+accept=".csv">
+ <input type="submit" value="Enviar">
+ </form>
+<hr>
+<hr>
+<button id="btnBuscar">Solicitar Listado</button>
+<div id="salida">
+</div>
+</body>
+</html>

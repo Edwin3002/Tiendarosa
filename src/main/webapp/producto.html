@@ -14,6 +14,36 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
  <script src="Producto.js"></script>
+ <script>
+$(document).ready(function(){
+function listar(){
+$.get("http://localhost:8080/listaClientes",function(data, status){
+if(status=="success"){
+let longitud = data.length;
+let salida ="<table border='1'>";
+salida = salida +
+"<tr><th>ID</th><th>NOMBRE</th><th>NITPROVE</th><th>PRECIO</th><th>IVA</th><th>VENTA</th></tr>";
+for(let i=0;i<longitud;i++){
+
+
+salida = salida + "<tr>";
+salida = salida + "<td>"+data[i].id_usuario+"</td>";
+
+salida = salida + "<td>"+data[i].nombre+"</td>";
+salida = salida + "<td>"+data[i].nitprove+"</td>";
+salida = salida + "<td>"+data[i].precio+"</td>";
+salida = salida + "<td>"+data[i].iva+"</td>";
+salida = salida + "<td>"+data[i].venta+"</td>";
+salida = salida + "</tr>";
+}
+salida = salida +"</table>";
+$("#salida").html(salida);
+}
+});
+}
+});
+</script>
+ 
 </head>
 <body id="page-top">
         <div id="wrapper">
@@ -89,7 +119,7 @@
                 <h1 class="h3 mb-0 text-gray-800">Productos</h1>
                 </div>
                 <div>
-                <form id="contenedorUsuario">
+                
                     <form name="news">
                     <b><label>Codigo:</label></b><br>
                     <input id="id" type="text"class="inputCampo"><br><br>
@@ -103,8 +133,19 @@
                     <input id="iva" type="text"class="inputCampo"><br><br>
                     <b><label>Venta:</label></b><br>
                     <input id="venta" type="text"class="inputCampo"><br><br>
-                    
+                    </form>
                 
+                
+                <form method="POST" action="./cargarArchivo" enctype="multipart/form-data">			<!-- Quitar punto -->
+ 				<label ><b>Cargar archivo .csv</b> </label>
+ 				<input type="file" name="archivoCSV" accept=".csv" value="subir csv">
+				 <input type="submit" class="boton" value="Enviar">
+				 </form>
+				
+				<div id="salida">
+				</div>
+				<br>
+                <form id="contenedorUsuario">
                 <div>
                 <input type="reset" value="Limpiar" target="_parent"  class="boton">
                 <input type="button" value="Buscar"   id="buscarU" target="_parent" class="boton">
@@ -112,8 +153,12 @@
                 <input type="button" value="Eliminar" id="eliminarU" target="_parent"  class="boton">
                 <input type="button" value="Actualizar"  id="actualizarU" target="_parent"  class="boton">
                 <input type="button" value="Listar"   id="listarU" target="_parent"  class="boton"></div>
+                
                 </form>
-                </form>
+                
+                
+                
+                
                 <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
