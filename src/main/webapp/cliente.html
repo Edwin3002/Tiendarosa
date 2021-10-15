@@ -1,137 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
- <link rel="stylesheet" type="text/css" href="users.css">
+
 <meta charset="ISO-8859-1">
  <meta http-equiv="X-UA-Compatible" content="IE=edge">
  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
  <meta name="description" content="">
  <meta name="author" content="">
- <title>Cliente</title>
- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
- <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
- <link href="css/sb-admin-2.min.css" rel="stylesheet">
+ <title>Tienda de videojuegos</title>
+
+ <script src="https://kit.fontawesome.com/38890b9b7f.js" crossorigin="anonymous"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
- 
+ <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAjVBMVEUQfBD///8AeAAAcwAAcQAAdwAAdQAAegAAcAALewv8/vwIewj1+vVWmVbp8ul4qXhOlU7j7uOwzbCnx6fV5dXH3MdAj0BloWVvp29/r3+uzK6607qRupGdwZ2XvpfB2MFcnFwjgyNFkUXb6duHtIcyiTIcgRw3izd0qXTN4M1ppGmjxqNKk0qLtosriSuUXSmFAAAKH0lEQVR4nO2d53biuhaAwbIkC1PjEHpCSQglmfd/vGtDABeVLVsycK6+P7PWnDlIW2U3bcmNhsPhcDgcDofD4XA4HA6Hw+FwOBwOh8PhcDgcjv83GKPUi8EYJ39QGrJ7d8kYjGKCENmuD73e5ESv1xutVzj+S0yfXU6GSRB2fqev3WaR7mY274Q+8Z5VSkYJ+jeZ8WTLyDnbNRCh9+6tNrF4ZBmppLswiPr+cwkZxuLNWkDxzrRnfYTDe3ccCEWrRVtLvDPdxRY9w0R6qDMsId6ZYQd59xZADsPBYVNavoTNMnhkGTHpQZWLmMH4YeeR+uPq8p1kXPoPuR9Jf2BEvoTXNbm3OEXwsbuP5vP5Yrbf6BmKG63NfnZ8n8+jfXeB7y1QEYoIif3qxAn1t6NIU+G0XqPxykfn3yDk4c0G8+I+jl6gVrEbdTAi3rMY/AuJlD9Hte7pHt9il+1Zve/Y+e5PZTPZnq4RfvQVqYASvBPtyU0PP5fDLYB5QZ/nyM2+gwdUmCWh6GuWFa8VNR5eX+oREhrdzGR7jslT6JbQ8+BKkMUy/gm4wBj+v1HvfmaEvB3Gy9AH95aRRrJWIwqeP4YRXe4O33fy4fzzlGx+QwId5BC9vazA8sUr+/P11Ebkl+1kFfzFdVu9rBBURo35Q9uXawuLO4iI3jOaf2t6IWE2TTfwjgz/vhL0mbNuv4FJ5U+DSS5AmdS8F/GoYMAHX+b6QN6KseayVveAvhU6EPMZmFHrLHjn/fxbjR4Co3xver81kWHBW74f264xAPH33C7Evlin+kpFS1GKYF+bQkXcRXTmN6j22yxlhArUpVC9jrgPsd0Am0YelIiWx4l+LXlGhuXJiU2jfDe8lTxf14b7sxXwZ9JOxJvxraxex2tVlm5Ww1b0ipawwKjcfkGQn7a+TpkHSaBNyoiIJoBfbls/MUZTdS9i3vVVKt/MF5ha1qd8Z4ZDFOiNNQtgQ2fdtfHBqWw9ncD8F/VPnnm1qmy8A7QfzebQh88iCz7gP3ywqGwY0jk+G8J3DNIQsNm1uBNxT6MjsR8JdVLljkyBnb1JDPROQIeWJOxW9H3FeDutjgzgSTisN3RjW5OItA552xTugtOG1qHqwNJOpEutgf7RGWgsjVcKdOzYRKS1WzQzRySf2ZKioaY1CFc6fXjRtcu+jsFoNmx4p0QSfBcYIN0u6GmbdxuJN6LTg5X+RqFfGr9vw+rTvkYHDmWGGI81Wlib1zUE7BrHgUW5EYZ733EQZT4F7sMLKjfam/AMI3CDa96voRoGq1E220ZX8EZ+TC9TEqkb/WNcXs9puPbGy8LgHluldBjcKm4Ma1O2hbbcLbkJ/9pRJGNTGD7FgIcVFdMoHtgoGc4rgm3FvKoWR0dgS5FZe+EDt+GrUokrpxjclNGNyCis1ZbKUDDyoypVgHpvLaM1R1CXbadQ4RTNmjNVtRc0kDKaOMWwRj8UhgJ/Jd57d6UYhwAWiBrNZRBQQrqlUODoL0nQWsqVRLgF5TQikzYfvYIGVdok83+v//JTPtkYZJvAqTyQhJDYcCZVbixz7jiVH2sICwXSmMxHMQJoUH4+S73sMhhKa+HCBqRBg3PIIA1Ko15vm18FAypThRhylmjwyBtypjaUbS38VnQ321KVCtn5W3N1px4gvyC7m024mdZWX7LMIJm9vjmD6KnDtolkQpDoTG4kEZGoj4QNGkS1hLJjS1+8p3ZidcjUEWmvTgm/xAsmZQaLSEoa6M8jSXgUL7dAnkieiydfWRRRo4QSU+irwr13oYiMKpy3GiUUh9uBOoF1FIaUqrxUfRKKTaEP8djFhfhIXvlRn4QrkeUF1shEollUeBq1SbgQqRlwll44i0haJViXhEI1A65yigdJMIuhNIlpUkJZvNYTeDMAJaMWUerZGKw6kR1aDAR9k1UzcxDYRUYkGWKDfmkoSX8JigZ8WKXhjV++dyML9/+Zi54kycQ9v2OFKzVqBA6cxD01mdcXrxW+Q0r0aovOjLk6WbxDTMb44oHk52YIoJyZA//eTyCKhY3WDQlLab54xh7rHPmnWfNEFGajjRbViM5HuVPofZcUsNnirnlR4s3o0YwoMcTLlFBW5gmlM9xaOLrm/2OjRZiCRl44U8i8Ko/UcOsZBXvEbME331zwXG6hYoDxykkV83diy+z9GW4FO28XKm/UqOCVAXBHzfBBPvdohqNIkSwpA2Ne7Dm37tPwGTCvSJ+jrTmXZ/XhmEWePR6ZLahhYbGJokdKS9uJDEWbwctnmL5RWhzFYlBRTY3e6BbuNnFCDNP1NA1cCIaKWW7YKSOAojtfLG41XhNV0NjFA1+kFxHKOOZFLAb75ssv87WJL3lVZkTLXBjlZwjl3vBpm79zka8ZynsU8pSKLoWylbwyt1BfmlumeT0DOEjRolCjGmTXkIUa4dxZ/jy3jMDFWlAWua2YXUNW7pRktWnOJZXfYC9F7mZ6dg1ZqdXPbLScNRI9I1GF/CMRmbsCzMpt4LQ6y42hzgVJMMPsVk8v0w87F5/SOaHsRte6RwAnW4GUdr8NZkoz3NRlKzO8yoO+kuTWqX/9D7burqVKMrJuld6VJQ2yseLNKbR3ifR6hzSzDT29W3s6dNKiXJW5BX/m2sYliEkHTkzrQpQembJ4enELRWdBBrgKs0o1DCh8KU+6bPxyelLtNoCCv2c/2qltaNYfzdNKl1r9BYl2H//wT7s9be/lx7SVSScszzXudt9U+DtZT2VoZAdvRvh3cw/PedNvy09+ocSz+LjtjnzcZpxUypIkVqnkzT84J+s+u0oYmsk9ybj5+ImENbyjhA/pOSR2d2HCLdZNJLT/xlC834e3fcg86wI2m9ebI/E+VN13MEIcKXUv7eB5DRJek3p+1/4bSifiaPdipRRlWWa4XHBi26wXZxF0HJ81tnVTcWZ7Hk+6s/1G1I3LSAIvC1XlGkrU/2UPYitsylJIzdaHby+qSGP8iAIOqkVAm/GgCuC9y8rcbw7rsPcJ9/v2XFCPgK37rdJaDL7pO81aYJsJjBv5M5IaYaGdRGmWOt+ALoA13lEsTR0Bkxj+vTuzAt7581342/ypU5p26UeJjUGx3qOHeuyld2lrghk//r3xrvEGqk1Qx85KbffvZwhzeNRGGPVBH+hLj8w/mLaM7dGDrNALmGo8tgYgwg80gWcYWpvzUvdvNs+XSmPuO6Sjx/wOaYxHJtW1avdxvyXbSB4j8z+rzePg8NDfA07AaFTeydk//DedT1C0XZSZyO5x9TQfDAwx6YM/s/on3nRNwJ9vewgo8TsRtCBzcPwJnvFznZSgVW+mkLK1icaNJ/7YaugRn3Y+p/tB0alrD4bTyTr5DvAjGncdGE0+80zo96HXm5zo9XY/q9Nf4qf9DjAHFlLP85LPWsd/eFT2JJHD4XA4HA6Hw+FwOBwOh8PhcDgcDofD4XA4HI7/Kv8DIqaPDnzHsfEAAAAASUVORK5CYII=">
+    
+ <link href="navbar2.css" rel="stylesheet">
  <script src="Cliente.js"></script>
 </head>
-<body id="page-top">
-        <div id="wrapper">
-        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="menu.html">
-            <div class="sidebar-brand-icon rotate-n-0">
+<body >
+        <ul>
+        <li><a  href=""> Tienda series <i id="ice2" class="fab fa-xbox"></i></a></li>
+        <li ><a href="http://localhost:8080/login2.html"> Usuarios <i id="ice" class="fas fa-home"></i></a></li>
+        <li class="active"><a href="http://localhost:8080/cliente.html">Clientes <i id="ice" class="fas fa-user"></i></a></li>
+        <li ><a href="http://localhost:8080/proveedor.html">Proveedores <i id="ice" class="fas fa-truck-moving"></i></a></li>
+        <li><a href="http://localhost:8080/producto.html">Productos <i id="ice" class="fas fa-box-open"></i></a></li>
+        <li><a href="http://localhost:8080/ventas.html">Ventas <i  id="ice"class="fas fa-receipt"></i></a></li>
+        <li><a href="http://localhost:8080/reportes.html">Reportes <i id="ice" class="fas fa-address-book"></i></a></li>
+    </ul>
+    <br><br><br>
+                
+    <div class="box">
+        <h1>Clientes</h1>
+    <form action="">
+        <label for=""><i class="fas fa-id-card"></i> Cedula</label>
+        <input type="text" id="id" placeholder="Cedula">
+        <label for=""><i class="fas fa-id-badge"></i> Nombre completo</label>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <label for=""><i class="fas fa-at"></i> Correo</label>
+        <input type="text" id="correo" placeholder="Correo">
+        <label for=""><i class="fas fa-map-marked-alt"></i> Direccion</label>
+        <input type="text" id="direccion" placeholder="Direccion">
+        <label for=""><i class="fas fa-phone-square"></i> Telefono</label>
+        <input type="text" id="telefono" placeholder="Telefono">
 
-                <img src="https://png.pngtree.com/png-vector/20191010/ourlarge/pngtree-rose-logo-vector-png-image_1811819.jpg" width="50px">
-            </div>
-            <div class="sidebar-brand-text mx-3">ROSA CONDENSA COSMETICS</div>
-            </a>
-            <hr class="sidebar-divider my-0">
-            <li class="nav-item active">
-            <a class="nav-link" href="http://localhost:8080/login2.html">
-                <i class="fas fa-home"></i>
-                <span>Usuarios</span></a>
-            </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="http://localhost:8080/cliente.html">
-                <i class="fas fa-users"></i>
-                <i class="fa-solid fa-cart-flatbed-boxes"></i>
-                <span>Clientes</span></a>
-            </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="http://localhost:8080/proveedor.html">
-                <i class="fas fa-truck"></i>
-                <span>Proveedores</span></a>
-            </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="http://localhost:8080/producto.html">
+        <input class="boton" type="reset" value="Limpiar">
+        <input class="boton" type="button" value="Buscar" id="buscarU">
+        <input class="boton" type="button" value="Agregar" id="agregarU">
+        <input class="boton" type="button" value="Eliminar" id="eliminarU">
+        <input class="boton" type="button" value="Actualizar" id="actualizarU">
+        <input class="boton" type="button" value="Listar" id="listarU">
+    </form>
+    <br>
+    </div>
                 
-                <i class="fas fa-boxes stacked"></i>
-                <span>Productos</span></a>
-            </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="/ciclo 3/ventas.html">
-                <i class="fas fa-table"></i>
-                <span>Ventas</span></a>
-            </li>
-            <li class="nav-item active">
-            <a class="nav-link" href="/ciclo 3/Reportes.html">
-                <i class="fas fa-book"></i>
-                <span>Reportes</span></a>
-            </li>
-    
-        </ul>
-        <div id="content-wrapper" class="d-flex flex-column">
-            <div id="content">
-            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                <i class="fa fa-bars"></i>
-                </button>
-                </form>
-                <ul class="navbar-nav ml-auto">
-                <li class="nav-item dropdown no-arrow d-sm-none">
-                    <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-search fa-fw"></i>
-                    </a>
-                    <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-bell fa-fw"></i>
-                    <span class="badge badge-danger badge-counter">3+</span>
-                    </a>
-                
-                    </h6>
-                
-                    </a>
-                    </div>
-                </li>
-                </ul>
-            </nav>
-            <div class="container-fluid">
-                <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                <h1 class="h3 mb-0 text-gray-800">Clientes</h1>
-                </div>
-                <div>
-                <form id="contenedorUsuario">
-                    <form name="news">
-                    <b><label>Cedula:</label></b><br>
-                    <input id="id" type="text"class="inputCampo"><br><br>
-                    <b><label>Nombre Completo:</label></b><br>
-                    <input id="nombre" type="text"class="inputCampo"><br><br>
-                    <b><label>Correo Electrónico:</label></b><br>
-                    <input id="correo" type="email"class="inputCampo"><br><br>
-                    <b><label>Dirección:</label></b><br>
-                    <input id="direccion" type="text"class="inputCampo"><br><br>
-                    <b><label>Teléfono:</label></b><br>
-                    <input id="telefono" type="text"class="inputCampo"><br><br>
-                   
-                
-                <div>
-                <input type="reset" value="Limpiar" target="_parent"  class="boton">
-                <input type="button" value="Buscar"   id="buscarU" target="_parent" class="boton">
-                <input type="button" value="Agregar"  id="agregarU" target="_parent" class="boton">
-                <input type="button" value="Eliminar" id="eliminarU" target="_parent"  class="boton">
-                <input type="button" value="Actualizar"  id="actualizarU" target="_parent"  class="boton">
-                <input type="button" value="Listar"   id="listarU" target="_parent"  class="boton"></div>
-                 </form>
-                </form>
-                
-                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                    <div class="modal-header">
-            
-                        
-                    </div>    
-                    </div>
-                    </div>
-                </div>
-                </div>
-                <script src="vendor/jquery/jquery.min.js"></script>
-                <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-                <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-                <script src="js/sb-admin-2.min.js"></script>
-                <script src="vendor/chart.js/Chart.min.js"></script>
-                <script src="js/demo/chart-area-demo.js"></script>
-                <script src="js/demo/chart-pie-demo.js"></script>
                 <div id="mensaje">
    				 </div>
             </body>
